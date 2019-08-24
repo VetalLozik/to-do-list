@@ -1,0 +1,65 @@
+$padding-container: 20px;
+
+@mixin input {
+    width: 100%;
+    border: 0px;
+    outline: none;
+}
+@mixin button {
+    padding: 5px 10px;
+    color: white;
+    margin: 15px 0 25px;
+    font-size: 10px;
+    outline: none;
+    cursor: pointer;
+    border: none;
+}
+
+
+.container{
+    width: 500px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.3);
+    margin: 0 auto;
+    .container_new-task{
+        padding: $padding-container;
+        border: 1px solid grey;
+        form{
+            input{
+               @include input;
+            }
+            button{
+                @include button;
+                background: rgb(44, 209, 171);
+            }
+        }  
+    }
+    .container_task-list{
+        padding: $padding-container;
+        border: 1px solid grey;
+        input{
+            @include input;
+        }
+        button{
+            @include button;
+            background: black;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0px;
+            .collection-item{
+                border: 1px solid rgb(214, 203, 203);
+                display: flex;
+                align-items: center;
+                margin: 2px;
+                padding-left: 10px;
+                overflow-x: auto;
+                .delete-item{
+                    margin-left: auto;
+                    display: inline-block;
+                    cursor: pointer;
+                    padding: 10px;
+                }
+            }
+        }
+    }
+}
